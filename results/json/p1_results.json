@@ -1,0 +1,486 @@
+{
+  "weights_P": [
+    0.3,
+    0.3,
+    0.2,
+    0.2
+  ],
+  "weights_C": [
+    0.3,
+    0.3,
+    0.2,
+    0.2
+  ],
+  "type_classification": [
+    {
+      "id": "A1",
+      "name": "古城老街",
+      "primary_type": "人文",
+      "secondary_type": "古迹",
+      "family_friendly": true
+    },
+    {
+      "id": "A2",
+      "name": "海洋乐园",
+      "primary_type": "主题",
+      "secondary_type": "游乐",
+      "family_friendly": true
+    },
+    {
+      "id": "A3",
+      "name": "滨海浴场",
+      "primary_type": "休闲",
+      "secondary_type": "度假",
+      "family_friendly": true
+    },
+    {
+      "id": "A4",
+      "name": "森林公园",
+      "primary_type": "自然",
+      "secondary_type": "山林",
+      "family_friendly": false
+    },
+    {
+      "id": "A5",
+      "name": "民俗古村",
+      "primary_type": "人文",
+      "secondary_type": "乡村",
+      "family_friendly": false
+    },
+    {
+      "id": "A6",
+      "name": "山野溪谷",
+      "primary_type": "自然",
+      "secondary_type": "徒步",
+      "family_friendly": false
+    },
+    {
+      "id": "A7",
+      "name": "环湖湿地",
+      "primary_type": "自然",
+      "secondary_type": "生态",
+      "family_friendly": true
+    },
+    {
+      "id": "A8",
+      "name": "亲子农庄",
+      "primary_type": "主题",
+      "secondary_type": "亲子",
+      "family_friendly": true
+    },
+    {
+      "id": "A9",
+      "name": "山地观景台",
+      "primary_type": "自然",
+      "secondary_type": "观景",
+      "family_friendly": false
+    },
+    {
+      "id": "A10",
+      "name": "文创小镇",
+      "primary_type": "人文",
+      "secondary_type": "休闲",
+      "family_friendly": true
+    }
+  ],
+  "four_dim_scores": [
+    {
+      "id": "A1",
+      "S_i": 0.86,
+      "L_i": 0.428571,
+      "D_i_comm": 0.666667,
+      "C_i": 0.88,
+      "C_1i": 1.0,
+      "C_2i": 1.0,
+      "C_3i": 1.0,
+      "C_4i": 0.4
+    },
+    {
+      "id": "A2",
+      "S_i": 0.92,
+      "L_i": 0.142857,
+      "D_i_comm": 0.466667,
+      "C_i": 0.36,
+      "C_1i": 0.0,
+      "C_2i": 0.0,
+      "C_3i": 1.0,
+      "C_4i": 0.8
+    },
+    {
+      "id": "A3",
+      "S_i": 0.75,
+      "L_i": 0.714286,
+      "D_i_comm": 0.8,
+      "C_i": 0.6,
+      "C_1i": 1.0,
+      "C_2i": 1.0,
+      "C_3i": 0.0,
+      "C_4i": 0.0
+    },
+    {
+      "id": "A4",
+      "S_i": 0.8,
+      "L_i": 0.0,
+      "D_i_comm": 0.0,
+      "C_i": 0.4,
+      "C_1i": 0.0,
+      "C_2i": 0.0,
+      "C_3i": 1.0,
+      "C_4i": 1.0
+    },
+    {
+      "id": "A5",
+      "S_i": 0.72,
+      "L_i": 0.428571,
+      "D_i_comm": 0.6,
+      "C_i": 0.88,
+      "C_1i": 1.0,
+      "C_2i": 1.0,
+      "C_3i": 1.0,
+      "C_4i": 0.4
+    },
+    {
+      "id": "A6",
+      "S_i": 0.78,
+      "L_i": 0.142857,
+      "D_i_comm": 0.2,
+      "C_i": 0.36,
+      "C_1i": 0.0,
+      "C_2i": 0.0,
+      "C_3i": 1.0,
+      "C_4i": 0.8
+    },
+    {
+      "id": "A7",
+      "S_i": 0.68,
+      "L_i": 0.571429,
+      "D_i_comm": 0.733333,
+      "C_i": 0.64,
+      "C_1i": 1.0,
+      "C_2i": 1.0,
+      "C_3i": 0.0,
+      "C_4i": 0.2
+    },
+    {
+      "id": "A8",
+      "S_i": 0.83,
+      "L_i": 0.428571,
+      "D_i_comm": 0.533333,
+      "C_i": 0.88,
+      "C_1i": 1.0,
+      "C_2i": 1.0,
+      "C_3i": 1.0,
+      "C_4i": 0.4
+    },
+    {
+      "id": "A9",
+      "S_i": 0.7,
+      "L_i": 0.571429,
+      "D_i_comm": 0.333333,
+      "C_i": 0.84,
+      "C_1i": 1.0,
+      "C_2i": 1.0,
+      "C_3i": 1.0,
+      "C_4i": 0.2
+    },
+    {
+      "id": "A10",
+      "S_i": 0.76,
+      "L_i": 0.428571,
+      "D_i_comm": 0.666667,
+      "C_i": 0.88,
+      "C_1i": 1.0,
+      "C_2i": 1.0,
+      "C_3i": 1.0,
+      "C_4i": 0.4
+    }
+  ],
+  "priority_ranking": [
+    {
+      "rank": 1,
+      "id": "A3",
+      "P_i": 0.687857,
+      "S_i": 0.75,
+      "L_i": 0.714286,
+      "D_i_comm": 0.8,
+      "one_minus_C_i": 0.4,
+      "tier": "high"
+    },
+    {
+      "rank": 2,
+      "id": "A7",
+      "P_i": 0.610286,
+      "S_i": 0.68,
+      "L_i": 0.571429,
+      "D_i_comm": 0.733333,
+      "one_minus_C_i": 0.36,
+      "tier": "high"
+    },
+    {
+      "rank": 3,
+      "id": "A2",
+      "P_i": 0.572571,
+      "S_i": 0.92,
+      "L_i": 0.142857,
+      "D_i_comm": 0.466667,
+      "one_minus_C_i": 0.64,
+      "tier": "high"
+    },
+    {
+      "rank": 4,
+      "id": "A1",
+      "P_i": 0.567714,
+      "S_i": 0.86,
+      "L_i": 0.428571,
+      "D_i_comm": 0.666667,
+      "one_minus_C_i": 0.12,
+      "tier": "high"
+    },
+    {
+      "rank": 5,
+      "id": "A10",
+      "P_i": 0.537714,
+      "S_i": 0.76,
+      "L_i": 0.428571,
+      "D_i_comm": 0.666667,
+      "one_minus_C_i": 0.12,
+      "tier": "mid"
+    },
+    {
+      "rank": 6,
+      "id": "A8",
+      "P_i": 0.518714,
+      "S_i": 0.83,
+      "L_i": 0.428571,
+      "D_i_comm": 0.533333,
+      "one_minus_C_i": 0.12,
+      "tier": "mid"
+    },
+    {
+      "rank": 7,
+      "id": "A5",
+      "P_i": 0.505714,
+      "S_i": 0.72,
+      "L_i": 0.428571,
+      "D_i_comm": 0.6,
+      "one_minus_C_i": 0.12,
+      "tier": "mid"
+    },
+    {
+      "rank": 8,
+      "id": "A9",
+      "P_i": 0.456286,
+      "S_i": 0.7,
+      "L_i": 0.571429,
+      "D_i_comm": 0.333333,
+      "one_minus_C_i": 0.16,
+      "tier": "low"
+    },
+    {
+      "rank": 9,
+      "id": "A6",
+      "P_i": 0.450571,
+      "S_i": 0.78,
+      "L_i": 0.142857,
+      "D_i_comm": 0.2,
+      "one_minus_C_i": 0.64,
+      "tier": "low"
+    },
+    {
+      "rank": 10,
+      "id": "A4",
+      "P_i": 0.36,
+      "S_i": 0.8,
+      "L_i": 0.0,
+      "D_i_comm": 0.0,
+      "one_minus_C_i": 0.6,
+      "tier": "low"
+    }
+  ],
+  "combo_pairs": [
+    {
+      "pair": "A2-A8",
+      "D_ij": 0.2,
+      "Link_ij": 0.833333,
+      "feasible_one_day": false,
+      "combined_type": "主题+主题"
+    },
+    {
+      "pair": "A1-A10",
+      "D_ij": 0.2,
+      "Link_ij": 0.833333,
+      "feasible_one_day": true,
+      "combined_type": "人文+人文"
+    },
+    {
+      "pair": "A3-A7",
+      "D_ij": 0.2,
+      "Link_ij": 0.833333,
+      "feasible_one_day": true,
+      "combined_type": "休闲+自然"
+    },
+    {
+      "pair": "A1-A5",
+      "D_ij": 0.3,
+      "Link_ij": 0.769231,
+      "feasible_one_day": true,
+      "combined_type": "人文+人文"
+    },
+    {
+      "pair": "A2-A10",
+      "D_ij": 0.3,
+      "Link_ij": 0.769231,
+      "feasible_one_day": true,
+      "combined_type": "主题+人文"
+    },
+    {
+      "pair": "A1-A8",
+      "D_ij": 0.3,
+      "Link_ij": 0.769231,
+      "feasible_one_day": true,
+      "combined_type": "人文+主题"
+    },
+    {
+      "pair": "A8-A10",
+      "D_ij": 0.3,
+      "Link_ij": 0.769231,
+      "feasible_one_day": true,
+      "combined_type": "主题+人文"
+    },
+    {
+      "pair": "A4-A9",
+      "D_ij": 0.3,
+      "Link_ij": 0.769231,
+      "feasible_one_day": false,
+      "combined_type": "自然+自然"
+    },
+    {
+      "pair": "A1-A2",
+      "D_ij": 0.4,
+      "Link_ij": 0.714286,
+      "feasible_one_day": false,
+      "combined_type": "人文+主题"
+    },
+    {
+      "pair": "A5-A10",
+      "D_ij": 0.4,
+      "Link_ij": 0.714286,
+      "feasible_one_day": true,
+      "combined_type": "人文+人文"
+    },
+    {
+      "pair": "A7-A10",
+      "D_ij": 0.4,
+      "Link_ij": 0.714286,
+      "feasible_one_day": true,
+      "combined_type": "自然+人文"
+    },
+    {
+      "pair": "A4-A6",
+      "D_ij": 0.4,
+      "Link_ij": 0.714286,
+      "feasible_one_day": false,
+      "combined_type": "自然+自然"
+    },
+    {
+      "pair": "A1-A7",
+      "D_ij": 0.5,
+      "Link_ij": 0.666667,
+      "feasible_one_day": true,
+      "combined_type": "人文+自然"
+    },
+    {
+      "pair": "A2-A3",
+      "D_ij": 0.5,
+      "Link_ij": 0.666667,
+      "feasible_one_day": true,
+      "combined_type": "主题+休闲"
+    },
+    {
+      "pair": "A3-A10",
+      "D_ij": 0.5,
+      "Link_ij": 0.666667,
+      "feasible_one_day": true,
+      "combined_type": "休闲+人文"
+    },
+    {
+      "pair": "A5-A8",
+      "D_ij": 0.5,
+      "Link_ij": 0.666667,
+      "feasible_one_day": true,
+      "combined_type": "人文+主题"
+    },
+    {
+      "pair": "A6-A9",
+      "D_ij": 0.5,
+      "Link_ij": 0.666667,
+      "feasible_one_day": false,
+      "combined_type": "自然+自然"
+    },
+    {
+      "pair": "A8-A9",
+      "D_ij": 0.5,
+      "Link_ij": 0.666667,
+      "feasible_one_day": true,
+      "combined_type": "主题+自然"
+    }
+  ],
+  "priority_pool": {
+    "high": [
+      {
+        "id": "A3",
+        "P_i": 0.687857,
+        "recommend_role": "必选"
+      },
+      {
+        "id": "A7",
+        "P_i": 0.610286,
+        "recommend_role": "必选"
+      },
+      {
+        "id": "A2",
+        "P_i": 0.572571,
+        "recommend_role": "必选"
+      },
+      {
+        "id": "A1",
+        "P_i": 0.567714,
+        "recommend_role": "必选"
+      }
+    ],
+    "mid": [
+      {
+        "id": "A10",
+        "P_i": 0.537714,
+        "recommend_role": "推荐"
+      },
+      {
+        "id": "A8",
+        "P_i": 0.518714,
+        "recommend_role": "推荐"
+      },
+      {
+        "id": "A5",
+        "P_i": 0.505714,
+        "recommend_role": "推荐"
+      }
+    ],
+    "low": [
+      {
+        "id": "A9",
+        "P_i": 0.456286,
+        "recommend_role": "备选"
+      },
+      {
+        "id": "A6",
+        "P_i": 0.450571,
+        "recommend_role": "备选"
+      },
+      {
+        "id": "A4",
+        "P_i": 0.36,
+        "recommend_role": "备选"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3754 @@
+{
+  "assumptions": {
+    "experiment": "target90 independent reliability-priority backup plan",
+    "does_not_replace_existing_profiles": true,
+    "N_coarse": 1000,
+    "N_final": 10000,
+    "seed": 2026,
+    "p_peak": 0.6,
+    "p_off": 0.3,
+    "tau_back_max_per_day": [
+      21.0,
+      21.0,
+      21.0,
+      21.0,
+      16.5
+    ],
+    "day_depart_candidates": [
+      [
+        11.5,
+        12.0,
+        12.5,
+        13.0,
+        13.5,
+        14.0
+      ],
+      [
+        8.5,
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0,
+        12.5,
+        13.0,
+        13.5
+      ],
+      [
+        8.5,
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0,
+        12.5,
+        13.0,
+        13.5
+      ],
+      [
+        8.5,
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0,
+        12.5,
+        13.0,
+        13.5
+      ],
+      [
+        8.5,
+        9.0,
+        9.5,
+        10.0,
+        10.5,
+        11.0,
+        12.5,
+        13.0
+      ]
+    ],
+    "failure_rule": "back > back_max[k] or actual_visit_time < l_min",
+    "visit_duration_for_target90": "l_min",
+    "early_arrival_handling": "visit_st=max(arr, open_hour)",
+    "trip_reliability_definition": "P(all five days succeed)"
+  },
+  "search_space": {
+    "spot_combinations_10_choose_5": 252,
+    "spot_to_day_assignments_P_10_5": 30240,
+    "raw_departure_products_per_assignment": 34992,
+    "raw_candidate_schedules": 1058158080,
+    "deterministic_day_options_checked": 410,
+    "deterministic_day_options_feasible": 367,
+    "dominance_pruned_day_spot_options": 50,
+    "coarse_N": 1000,
+    "final_N": 10000,
+    "pruning_rules": [
+      "Discard day-spot-depart options that are infeasible with no road delay and no queue.",
+      "For each fixed (day, spot), keep the departure candidate with the highest N=1000 day success rate.",
+      "Enumerate all distinct five-spot-to-five-day assignments using the retained day-spot options."
+    ],
+    "coarse_candidates_evaluated": 30240,
+    "coarse_top_k_retained": 20
+  },
+  "best_plan": {
+    "plan_name": "target90",
+    "selected": [
+      "A3",
+      "A1",
+      "A5",
+      "A10",
+      "A7"
+    ],
+    "departures": [
+      13.0,
+      9.0,
+      9.0,
+      9.0,
+      9.0
+    ],
+    "days": [
+      {
+        "day": 1,
+        "spot": "A3",
+        "depart": 13.0,
+        "arr": 13.3,
+        "visit_st": 13.3,
+        "actual_visit": 1.0,
+        "lv": 14.3,
+        "lunch": [
+          14.3,
+          15.3
+        ],
+        "back": 15.600000000000001,
+        "back_max": 21.0,
+        "buffer": 5.399999999999999,
+        "drive": 0.6
+      },
+      {
+        "day": 2,
+        "spot": "A1",
+        "depart": 9.0,
+        "arr": 9.5,
+        "visit_st": 9.5,
+        "actual_visit": 2.0,
+        "lv": 11.5,
+        "lunch": [
+          11.5,
+          12.5
+        ],
+        "back": 13.0,
+        "back_max": 21.0,
+        "buffer": 8.0,
+        "drive": 1.0
+      },
+      {
+        "day": 3,
+        "spot": "A5",
+        "depart": 9.0,
+        "arr": 9.6,
+        "visit_st": 9.6,
+        "actual_visit": 2.0,
+        "lv": 11.6,
+        "lunch": [
+          11.6,
+          12.6
+        ],
+        "back": 13.2,
+        "back_max": 21.0,
+        "buffer": 7.800000000000001,
+        "drive": 1.2
+      },
+      {
+        "day": 4,
+        "spot": "A10",
+        "depart": 9.0,
+        "arr": 9.5,
+        "visit_st": 9.5,
+        "actual_visit": 2.0,
+        "lv": 11.5,
+        "lunch": [
+          11.5,
+          12.5
+        ],
+        "back": 13.0,
+        "back_max": 21.0,
+        "buffer": 8.0,
+        "drive": 1.0
+      },
+      {
+        "day": 5,
+        "spot": "A7",
+        "depart": 9.0,
+        "arr": 9.4,
+        "visit_st": 9.4,
+        "actual_visit": 1.5,
+        "lv": 10.9,
+        "lunch": [
+          10.9,
+          11.9
+        ],
+        "back": 12.3,
+        "back_max": 16.5,
+        "buffer": 4.199999999999999,
+        "drive": 0.8
+      }
+    ],
+    "R": 0.9458,
+    "P_fail": 0.0542,
+    "CI_95": 0.004437673739426998,
+    "per_day_success": [
+      0.9914,
+      0.9994,
+      0.9991,
+      0.9996,
+      0.9558
+    ],
+    "per_day_fail": [
+      0.0086,
+      0.0006,
+      0.0009,
+      0.0004,
+      0.0442
+    ],
+    "main_failure_reasons": [
+      "back_late",
+      "back_late",
+      "back_late",
+      "back_late",
+      "back_late"
+    ],
+    "failure_reason_counts": [
+      {
+        "none": 9914,
+        "back_late": 86,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9994,
+        "back_late": 6,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9991,
+        "back_late": 9,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9996,
+        "back_late": 4,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9558,
+        "back_late": 442,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      }
+    ],
+    "N": 10000,
+    "seed": 2026,
+    "coarse_R": 0.946329,
+    "coarse_P_fail": 0.053671000000000024
+  },
+  "first_target_met_plan": {
+    "plan_name": "target90",
+    "selected": [
+      "A3",
+      "A1",
+      "A5",
+      "A10",
+      "A7"
+    ],
+    "departures": [
+      13.0,
+      9.0,
+      9.0,
+      9.0,
+      9.0
+    ],
+    "days": [
+      {
+        "day": 1,
+        "spot": "A3",
+        "depart": 13.0,
+        "arr": 13.3,
+        "visit_st": 13.3,
+        "actual_visit": 1.0,
+        "lv": 14.3,
+        "lunch": [
+          14.3,
+          15.3
+        ],
+        "back": 15.600000000000001,
+        "back_max": 21.0,
+        "buffer": 5.399999999999999,
+        "drive": 0.6
+      },
+      {
+        "day": 2,
+        "spot": "A1",
+        "depart": 9.0,
+        "arr": 9.5,
+        "visit_st": 9.5,
+        "actual_visit": 2.0,
+        "lv": 11.5,
+        "lunch": [
+          11.5,
+          12.5
+        ],
+        "back": 13.0,
+        "back_max": 21.0,
+        "buffer": 8.0,
+        "drive": 1.0
+      },
+      {
+        "day": 3,
+        "spot": "A5",
+        "depart": 9.0,
+        "arr": 9.6,
+        "visit_st": 9.6,
+        "actual_visit": 2.0,
+        "lv": 11.6,
+        "lunch": [
+          11.6,
+          12.6
+        ],
+        "back": 13.2,
+        "back_max": 21.0,
+        "buffer": 7.800000000000001,
+        "drive": 1.2
+      },
+      {
+        "day": 4,
+        "spot": "A10",
+        "depart": 9.0,
+        "arr": 9.5,
+        "visit_st": 9.5,
+        "actual_visit": 2.0,
+        "lv": 11.5,
+        "lunch": [
+          11.5,
+          12.5
+        ],
+        "back": 13.0,
+        "back_max": 21.0,
+        "buffer": 8.0,
+        "drive": 1.0
+      },
+      {
+        "day": 5,
+        "spot": "A7",
+        "depart": 9.0,
+        "arr": 9.4,
+        "visit_st": 9.4,
+        "actual_visit": 1.5,
+        "lv": 10.9,
+        "lunch": [
+          10.9,
+          11.9
+        ],
+        "back": 12.3,
+        "back_max": 16.5,
+        "buffer": 4.199999999999999,
+        "drive": 0.8
+      }
+    ],
+    "R": 0.9458,
+    "P_fail": 0.0542,
+    "CI_95": 0.004437673739426998,
+    "per_day_success": [
+      0.9914,
+      0.9994,
+      0.9991,
+      0.9996,
+      0.9558
+    ],
+    "per_day_fail": [
+      0.0086,
+      0.0006,
+      0.0009,
+      0.0004,
+      0.0442
+    ],
+    "main_failure_reasons": [
+      "back_late",
+      "back_late",
+      "back_late",
+      "back_late",
+      "back_late"
+    ],
+    "failure_reason_counts": [
+      {
+        "none": 9914,
+        "back_late": 86,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9994,
+        "back_late": 6,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9991,
+        "back_late": 9,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9996,
+        "back_late": 4,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9558,
+        "back_late": 442,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      }
+    ],
+    "N": 10000,
+    "seed": 2026,
+    "coarse_R": 0.946329,
+    "coarse_P_fail": 0.053671000000000024
+  },
+  "target_met": true,
+  "comparison_with_existing": {
+    "recommend": {
+      "R": 0.0004999999999999449,
+      "P_fail": 0.9995,
+      "CI_95": 0.0004381597425596958,
+      "Z4": 0.5999999999999996
+    },
+    "balanced": {
+      "R": 0.0004999999999999449,
+      "P_fail": 0.9995,
+      "CI_95": 0.0004381597425596958,
+      "Z4": 0.5999999999999996
+    },
+    "robust": {
+      "R": 0.0010999999999999899,
+      "P_fail": 0.9989,
+      "CI_95": 0.0006497008283817993,
+      "Z4": 2.1000000000000014
+    },
+    "target90": {
+      "R": 0.9458,
+      "P_fail": 0.0542,
+      "CI_95": 0.004437673739426998
+    }
+  },
+  "per_day_success": [
+    0.9914,
+    0.9994,
+    0.9991,
+    0.9996,
+    0.9558
+  ],
+  "per_day_fail": [
+    0.0086,
+    0.0006,
+    0.0009,
+    0.0004,
+    0.0442
+  ],
+  "main_failure_reasons": [
+    "back_late",
+    "back_late",
+    "back_late",
+    "back_late",
+    "back_late"
+  ],
+  "CI_95": 0.004437673739426998,
+  "improvement_vs_recommend": 0.9453,
+  "improvement_vs_robust": 0.9447,
+  "top20_final": [
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A1",
+        "A5",
+        "A10",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 3,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 4,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9458,
+      "P_fail": 0.0542,
+      "CI_95": 0.004437673739426998,
+      "per_day_success": [
+        0.9914,
+        0.9994,
+        0.9991,
+        0.9996,
+        0.9558
+      ],
+      "per_day_fail": [
+        0.0086,
+        0.0006,
+        0.0009,
+        0.0004,
+        0.0442
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9914,
+          "back_late": 86,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9994,
+          "back_late": 6,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9991,
+          "back_late": 9,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9558,
+          "back_late": 442,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A5",
+        "A1",
+        "A10",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 3,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9454,
+      "P_fail": 0.0546,
+      "CI_95": 0.0044530768659882805,
+      "per_day_success": [
+        0.9922,
+        0.9988,
+        0.9996,
+        0.9996,
+        0.9549
+      ],
+      "per_day_fail": [
+        0.0078,
+        0.0012,
+        0.0004,
+        0.0004,
+        0.0451
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9922,
+          "back_late": 78,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9549,
+          "back_late": 451,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A5",
+        "A10",
+        "A1",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 3,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9454,
+      "P_fail": 0.0546,
+      "CI_95": 0.0044530768659882805,
+      "per_day_success": [
+        0.9922,
+        0.9988,
+        0.9996,
+        0.9996,
+        0.9549
+      ],
+      "per_day_fail": [
+        0.0078,
+        0.0012,
+        0.0004,
+        0.0004,
+        0.0451
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9922,
+          "back_late": 78,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9549,
+          "back_late": 451,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.945382671,
+      "coarse_P_fail": 0.05461732900000005
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A5",
+        "A8",
+        "A10",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 3,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 4,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.945,
+      "P_fail": 0.055,
+      "CI_95": 0.004468413141149774,
+      "per_day_success": [
+        0.9918,
+        0.9987,
+        0.9989,
+        0.9996,
+        0.9555
+      ],
+      "per_day_fail": [
+        0.0082,
+        0.0013,
+        0.0011,
+        0.0004,
+        0.0445
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9918,
+          "back_late": 82,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9987,
+          "back_late": 13,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9989,
+          "back_late": 11,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9555,
+          "back_late": 445,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.945382671,
+      "coarse_P_fail": 0.05461732900000005
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A8",
+        "A5",
+        "A10",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 3,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 4,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.944,
+      "P_fail": 0.056,
+      "CI_95": 0.004506465825899493,
+      "per_day_success": [
+        0.9927,
+        0.997,
+        0.9994,
+        0.9996,
+        0.9549
+      ],
+      "per_day_fail": [
+        0.0073,
+        0.003,
+        0.0006,
+        0.0004,
+        0.0451
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9927,
+          "back_late": 73,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9970,
+          "back_late": 30,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9994,
+          "back_late": 6,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9549,
+          "back_late": 451,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A8",
+        "A1",
+        "A10",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 3,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9438,
+      "P_fail": 0.0562,
+      "CI_95": 0.004514027657159402,
+      "per_day_success": [
+        0.9929,
+        0.9972,
+        0.9997,
+        0.9996,
+        0.9541
+      ],
+      "per_day_fail": [
+        0.0071,
+        0.0028,
+        0.0003,
+        0.0004,
+        0.0459
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9929,
+          "back_late": 71,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9972,
+          "back_late": 28,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9997,
+          "back_late": 3,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9541,
+          "back_late": 459,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A1",
+        "A10",
+        "A5",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 3,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9438,
+      "P_fail": 0.0562,
+      "CI_95": 0.004514027657159402,
+      "per_day_success": [
+        0.9919,
+        0.9994,
+        0.9996,
+        0.9988,
+        0.9538
+      ],
+      "per_day_fail": [
+        0.0081,
+        0.0006,
+        0.0004,
+        0.0012,
+        0.0462
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9919,
+          "back_late": 81,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9994,
+          "back_late": 6,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9538,
+          "back_late": 462,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A1",
+        "A10",
+        "A9",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 3,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A9",
+          "depart": 9.0,
+          "arr": 10.0,
+          "visit_st": 10.0,
+          "actual_visit": 1.5,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.5,
+          "back_max": 21.0,
+          "buffer": 7.5,
+          "drive": 2.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9437,
+      "P_fail": 0.0563,
+      "CI_95": 0.0045178025509754185,
+      "per_day_success": [
+        0.9917,
+        0.9994,
+        0.9995,
+        0.9969,
+        0.9558
+      ],
+      "per_day_fail": [
+        0.0083,
+        0.0006,
+        0.0005,
+        0.0031,
+        0.0442
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9917,
+          "back_late": 83,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9994,
+          "back_late": 6,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9995,
+          "back_late": 5,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9969,
+          "back_late": 31,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9558,
+          "back_late": 442,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A1",
+        "A5",
+        "A9",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 3,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 4,
+          "spot": "A9",
+          "depart": 9.0,
+          "arr": 10.0,
+          "visit_st": 10.0,
+          "actual_visit": 1.5,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.5,
+          "back_max": 21.0,
+          "buffer": 7.5,
+          "drive": 2.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9435,
+      "P_fail": 0.0565,
+      "CI_95": 0.004525340345211617,
+      "per_day_success": [
+        0.9914,
+        0.9994,
+        0.9991,
+        0.9972,
+        0.9558
+      ],
+      "per_day_fail": [
+        0.0086,
+        0.0006,
+        0.0009,
+        0.0028,
+        0.0442
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9914,
+          "back_late": 86,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9994,
+          "back_late": 6,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9991,
+          "back_late": 9,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9972,
+          "back_late": 28,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9558,
+          "back_late": 442,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A5",
+        "A1",
+        "A9",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 3,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A9",
+          "depart": 9.0,
+          "arr": 10.0,
+          "visit_st": 10.0,
+          "actual_visit": 1.5,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.5,
+          "back_max": 21.0,
+          "buffer": 7.5,
+          "drive": 2.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9429,
+      "P_fail": 0.0571,
+      "CI_95": 0.004547858495423973,
+      "per_day_success": [
+        0.9922,
+        0.9988,
+        0.9996,
+        0.997,
+        0.9549
+      ],
+      "per_day_fail": [
+        0.0078,
+        0.0012,
+        0.0004,
+        0.003,
+        0.0451
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9922,
+          "back_late": 78,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9970,
+          "back_late": 30,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9549,
+          "back_late": 451,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A5",
+        "A10",
+        "A9",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 3,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A9",
+          "depart": 9.0,
+          "arr": 10.0,
+          "visit_st": 10.0,
+          "actual_visit": 1.5,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.5,
+          "back_max": 21.0,
+          "buffer": 7.5,
+          "drive": 2.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9429,
+      "P_fail": 0.0571,
+      "CI_95": 0.004547858495423973,
+      "per_day_success": [
+        0.9922,
+        0.9988,
+        0.9996,
+        0.997,
+        0.9549
+      ],
+      "per_day_fail": [
+        0.0078,
+        0.0012,
+        0.0004,
+        0.003,
+        0.0451
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9922,
+          "back_late": 78,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9970,
+          "back_late": 30,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9549,
+          "back_late": 451,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A1",
+        "A10",
+        "A8",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 3,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9428,
+      "P_fail": 0.0572,
+      "CI_95": 0.004551597735477071,
+      "per_day_success": [
+        0.9914,
+        0.9994,
+        0.9996,
+        0.9979,
+        0.9541
+      ],
+      "per_day_fail": [
+        0.0086,
+        0.0006,
+        0.0004,
+        0.0021,
+        0.0459
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9914,
+          "back_late": 86,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9994,
+          "back_late": 6,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9979,
+          "back_late": 21,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9541,
+          "back_late": 459,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.945382671,
+      "coarse_P_fail": 0.05461732900000005
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A5",
+        "A8",
+        "A9",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 3,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 4,
+          "spot": "A9",
+          "depart": 9.0,
+          "arr": 10.0,
+          "visit_st": 10.0,
+          "actual_visit": 1.5,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.5,
+          "back_max": 21.0,
+          "buffer": 7.5,
+          "drive": 2.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9427,
+      "P_fail": 0.0573,
+      "CI_95": 0.004555333062861594,
+      "per_day_success": [
+        0.9918,
+        0.9987,
+        0.9989,
+        0.9972,
+        0.9555
+      ],
+      "per_day_fail": [
+        0.0082,
+        0.0013,
+        0.0011,
+        0.0028,
+        0.0445
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9918,
+          "back_late": 82,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9987,
+          "back_late": 13,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9989,
+          "back_late": 11,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9972,
+          "back_late": 28,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9555,
+          "back_late": 445,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.945382671,
+      "coarse_P_fail": 0.05461732900000005
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A8",
+        "A5",
+        "A9",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 3,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 4,
+          "spot": "A9",
+          "depart": 9.0,
+          "arr": 10.0,
+          "visit_st": 10.0,
+          "actual_visit": 1.5,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.5,
+          "back_max": 21.0,
+          "buffer": 7.5,
+          "drive": 2.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9418,
+      "P_fail": 0.0582,
+      "CI_95": 0.004588776512492192,
+      "per_day_success": [
+        0.9927,
+        0.997,
+        0.9994,
+        0.9973,
+        0.9549
+      ],
+      "per_day_fail": [
+        0.0073,
+        0.003,
+        0.0006,
+        0.0027,
+        0.0451
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9927,
+          "back_late": 73,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9970,
+          "back_late": 30,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9994,
+          "back_late": 6,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9973,
+          "back_late": 27,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9549,
+          "back_late": 451,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A5",
+        "A1",
+        "A8",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 3,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9418,
+      "P_fail": 0.0582,
+      "CI_95": 0.004588776512492192,
+      "per_day_success": [
+        0.9917,
+        0.9988,
+        0.9996,
+        0.998,
+        0.9533
+      ],
+      "per_day_fail": [
+        0.0083,
+        0.0012,
+        0.0004,
+        0.002,
+        0.0467
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9917,
+          "back_late": 83,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9980,
+          "back_late": 20,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9533,
+          "back_late": 467,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.945382671,
+      "coarse_P_fail": 0.05461732900000005
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A5",
+        "A10",
+        "A8",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 3,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9418,
+      "P_fail": 0.0582,
+      "CI_95": 0.004588776512492192,
+      "per_day_success": [
+        0.9917,
+        0.9988,
+        0.9996,
+        0.998,
+        0.9533
+      ],
+      "per_day_fail": [
+        0.0083,
+        0.0012,
+        0.0004,
+        0.002,
+        0.0467
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9917,
+          "back_late": 83,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9996,
+          "back_late": 4,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9980,
+          "back_late": 20,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9533,
+          "back_late": 467,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.945382671,
+      "coarse_P_fail": 0.05461732900000005
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A8",
+        "A10",
+        "A9",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 3,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A9",
+          "depart": 9.0,
+          "arr": 10.0,
+          "visit_st": 10.0,
+          "actual_visit": 1.5,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.5,
+          "back_max": 21.0,
+          "buffer": 7.5,
+          "drive": 2.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9414,
+      "P_fail": 0.0586,
+      "CI_95": 0.004603540585940347,
+      "per_day_success": [
+        0.9929,
+        0.9972,
+        0.9997,
+        0.9971,
+        0.9541
+      ],
+      "per_day_fail": [
+        0.0071,
+        0.0028,
+        0.0003,
+        0.0029,
+        0.0459
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9929,
+          "back_late": 71,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9972,
+          "back_late": 28,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9997,
+          "back_late": 3,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9971,
+          "back_late": 29,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9541,
+          "back_late": 459,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A8",
+        "A1",
+        "A9",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 3,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A9",
+          "depart": 9.0,
+          "arr": 10.0,
+          "visit_st": 10.0,
+          "actual_visit": 1.5,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.5,
+          "back_max": 21.0,
+          "buffer": 7.5,
+          "drive": 2.0
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9414,
+      "P_fail": 0.0586,
+      "CI_95": 0.004603540585940347,
+      "per_day_success": [
+        0.9929,
+        0.9972,
+        0.9997,
+        0.9971,
+        0.9541
+      ],
+      "per_day_fail": [
+        0.0071,
+        0.0028,
+        0.0003,
+        0.0029,
+        0.0459
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9929,
+          "back_late": 71,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9972,
+          "back_late": 28,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9997,
+          "back_late": 3,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9971,
+          "back_late": 29,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9541,
+          "back_late": 459,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A8",
+        "A10",
+        "A5",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 3,
+          "spot": "A10",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9414,
+      "P_fail": 0.0586,
+      "CI_95": 0.004603540585940347,
+      "per_day_success": [
+        0.9929,
+        0.9972,
+        0.9997,
+        0.9988,
+        0.9525
+      ],
+      "per_day_fail": [
+        0.0071,
+        0.0028,
+        0.0003,
+        0.0012,
+        0.0475
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9929,
+          "back_late": 71,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9972,
+          "back_late": 28,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9997,
+          "back_late": 3,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9525,
+          "back_late": 475,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    },
+    {
+      "plan_name": "target90",
+      "selected": [
+        "A3",
+        "A8",
+        "A1",
+        "A5",
+        "A7"
+      ],
+      "departures": [
+        13.0,
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ],
+      "days": [
+        {
+          "day": 1,
+          "spot": "A3",
+          "depart": 13.0,
+          "arr": 13.3,
+          "visit_st": 13.3,
+          "actual_visit": 1.0,
+          "lv": 14.3,
+          "lunch": [
+            14.3,
+            15.3
+          ],
+          "back": 15.600000000000001,
+          "back_max": 21.0,
+          "buffer": 5.399999999999999,
+          "drive": 0.6
+        },
+        {
+          "day": 2,
+          "spot": "A8",
+          "depart": 9.0,
+          "arr": 9.7,
+          "visit_st": 9.7,
+          "actual_visit": 2.0,
+          "lv": 11.7,
+          "lunch": [
+            11.7,
+            12.7
+          ],
+          "back": 13.399999999999999,
+          "back_max": 21.0,
+          "buffer": 7.600000000000001,
+          "drive": 1.4
+        },
+        {
+          "day": 3,
+          "spot": "A1",
+          "depart": 9.0,
+          "arr": 9.5,
+          "visit_st": 9.5,
+          "actual_visit": 2.0,
+          "lv": 11.5,
+          "lunch": [
+            11.5,
+            12.5
+          ],
+          "back": 13.0,
+          "back_max": 21.0,
+          "buffer": 8.0,
+          "drive": 1.0
+        },
+        {
+          "day": 4,
+          "spot": "A5",
+          "depart": 9.0,
+          "arr": 9.6,
+          "visit_st": 9.6,
+          "actual_visit": 2.0,
+          "lv": 11.6,
+          "lunch": [
+            11.6,
+            12.6
+          ],
+          "back": 13.2,
+          "back_max": 21.0,
+          "buffer": 7.800000000000001,
+          "drive": 1.2
+        },
+        {
+          "day": 5,
+          "spot": "A7",
+          "depart": 9.0,
+          "arr": 9.4,
+          "visit_st": 9.4,
+          "actual_visit": 1.5,
+          "lv": 10.9,
+          "lunch": [
+            10.9,
+            11.9
+          ],
+          "back": 12.3,
+          "back_max": 16.5,
+          "buffer": 4.199999999999999,
+          "drive": 0.8
+        }
+      ],
+      "R": 0.9414,
+      "P_fail": 0.0586,
+      "CI_95": 0.004603540585940347,
+      "per_day_success": [
+        0.9929,
+        0.9972,
+        0.9997,
+        0.9988,
+        0.9525
+      ],
+      "per_day_fail": [
+        0.0071,
+        0.0028,
+        0.0003,
+        0.0012,
+        0.0475
+      ],
+      "main_failure_reasons": [
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late",
+        "back_late"
+      ],
+      "failure_reason_counts": [
+        {
+          "none": 9929,
+          "back_late": 71,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9972,
+          "back_late": 28,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9997,
+          "back_late": 3,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9988,
+          "back_late": 12,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        },
+        {
+          "none": 9525,
+          "back_late": 475,
+          "insufficient_visit_time": 0,
+          "back_late_and_insufficient_visit": 0
+        }
+      ],
+      "N": 10000,
+      "seed": 2026,
+      "coarse_R": 0.946329,
+      "coarse_P_fail": 0.053671000000000024
+    }
+  ],
+  "explanation": "target90 在不改变堵车概率、排队分布、失败标准和 Day1/Day5 边界的前提下达到 R>=0.9。其原因是方案定位从确定性多目标游览优化转为可靠性优先备用方案：总景点数收缩为 5 个、每天仅安排 1 个景点，并在给定出发时间候选内避开高风险时间窗。这属于出行策略重设计，而不是事后调参。"
+}

@@ -1,0 +1,789 @@
+{
+  "assumptions": {
+    "N_simulations": 10000,
+    "seed": 2026,
+    "p_peak": 0.6,
+    "p_off": 0.3,
+    "tau_dep_per_day": [
+      11.5,
+      8.5,
+      8.5,
+      8.5,
+      8.5
+    ],
+    "tau_back_max_per_day": [
+      21.0,
+      21.0,
+      21.0,
+      21.0,
+      16.5
+    ],
+    "T_scenic_max_per_day": [
+      9.5,
+      12.5,
+      12.5,
+      12.5,
+      8.0
+    ],
+    "early_arrival_handling": "wait_until_open",
+    "failure_rule": "back_late_or_insufficient_visit_time"
+  },
+  "plans": {
+    "recommend": {
+      "selected": [
+        "A1",
+        "A10",
+        "A2",
+        "A3",
+        "A5",
+        "A6",
+        "A7",
+        "A8"
+      ],
+      "Z1": 62.99999999999999,
+      "Z2": 7.800000000000001,
+      "Z3": 0.3864000000000008,
+      "Z4": 0.5999999999999996,
+      "Z4_mean": 3.0399999999999996,
+      "F": 0.8769878338254018,
+      "scenarios": {
+        "deterministic": {
+          "scenario": "deterministic",
+          "road_on": false,
+          "queue_on": false,
+          "N": 10000,
+          "seed": 2026,
+          "p_peak": 0.6,
+          "p_off": 0.3,
+          "R": 1.0,
+          "P_fail": 0.0,
+          "trip_fail_count": 0,
+          "dominant_failure_reason": "none",
+          "overall_failure_reason_counts": {
+            "back_late": 0,
+            "insufficient_visit_time": 0,
+            "back_late_and_insufficient_visit": 0
+          },
+          "per_day_success": [
+            {
+              "day": 1,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 2,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 3,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 4,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 5,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            }
+          ]
+        },
+        "road_only": {
+          "scenario": "road_only",
+          "road_on": true,
+          "queue_on": false,
+          "N": 10000,
+          "seed": 2026,
+          "p_peak": 0.6,
+          "p_off": 0.3,
+          "R": 0.027699999999999947,
+          "P_fail": 0.9723,
+          "trip_fail_count": 9723,
+          "dominant_failure_reason": "back_late",
+          "overall_failure_reason_counts": {
+            "back_late": 10939,
+            "insufficient_visit_time": 6901,
+            "back_late_and_insufficient_visit": 2117
+          },
+          "per_day_success": [
+            {
+              "day": 1,
+              "success_rate": 0.7279,
+              "failure_rate": 0.2721,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 7279,
+                "back_late": 203,
+                "insufficient_visit_time": 2368,
+                "back_late_and_insufficient_visit": 150
+              },
+              "short_visit_spot_counts": {
+                "A2": 2518
+              }
+            },
+            {
+              "day": 2,
+              "success_rate": 0.9024,
+              "failure_rate": 0.0976,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 9024,
+                "back_late": 976,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 3,
+              "success_rate": 0.44810000000000005,
+              "failure_rate": 0.5519,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 4481,
+                "back_late": 666,
+                "insufficient_visit_time": 3660,
+                "back_late_and_insufficient_visit": 1193
+              },
+              "short_visit_spot_counts": {
+                "A5": 4853
+              }
+            },
+            {
+              "day": 4,
+              "success_rate": 0.8007,
+              "failure_rate": 0.1993,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 8007,
+                "back_late": 658,
+                "insufficient_visit_time": 873,
+                "back_late_and_insufficient_visit": 462
+              },
+              "short_visit_spot_counts": {
+                "A10": 1335
+              }
+            },
+            {
+              "day": 5,
+              "success_rate": 0.12519999999999998,
+              "failure_rate": 0.8748,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 1252,
+                "back_late": 8436,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 312
+              },
+              "short_visit_spot_counts": {
+                "A7": 312
+              }
+            }
+          ]
+        },
+        "queue_only": {
+          "scenario": "queue_only",
+          "road_on": false,
+          "queue_on": true,
+          "N": 10000,
+          "seed": 2026,
+          "p_peak": 0.6,
+          "p_off": 0.3,
+          "R": 0.05010000000000003,
+          "P_fail": 0.9499,
+          "trip_fail_count": 9499,
+          "dominant_failure_reason": "back_late",
+          "overall_failure_reason_counts": {
+            "back_late": 8110,
+            "insufficient_visit_time": 7233,
+            "back_late_and_insufficient_visit": 0
+          },
+          "per_day_success": [
+            {
+              "day": 1,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 2,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 3,
+              "success_rate": 0.27669999999999995,
+              "failure_rate": 0.7233,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 2767,
+                "back_late": 0,
+                "insufficient_visit_time": 7233,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {
+                "A5": 7233
+              }
+            },
+            {
+              "day": 4,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 5,
+              "success_rate": 0.18899999999999995,
+              "failure_rate": 0.811,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 1890,
+                "back_late": 8110,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            }
+          ]
+        },
+        "road_and_queue": {
+          "scenario": "road_and_queue",
+          "road_on": true,
+          "queue_on": true,
+          "N": 10000,
+          "seed": 2026,
+          "p_peak": 0.6,
+          "p_off": 0.3,
+          "R": 0.0004999999999999449,
+          "P_fail": 0.9995,
+          "trip_fail_count": 9995,
+          "dominant_failure_reason": "insufficient_visit_time",
+          "overall_failure_reason_counts": {
+            "back_late": 10119,
+            "insufficient_visit_time": 12864,
+            "back_late_and_insufficient_visit": 6939
+          },
+          "per_day_success": [
+            {
+              "day": 1,
+              "success_rate": 0.6251,
+              "failure_rate": 0.3749,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 6251,
+                "back_late": 272,
+                "insufficient_visit_time": 3261,
+                "back_late_and_insufficient_visit": 216
+              },
+              "short_visit_spot_counts": {
+                "A2": 3477
+              }
+            },
+            {
+              "day": 2,
+              "success_rate": 0.7799,
+              "failure_rate": 0.2201,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 7799,
+                "back_late": 1300,
+                "insufficient_visit_time": 901,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {
+                "A6": 901
+              }
+            },
+            {
+              "day": 3,
+              "success_rate": 0.0676,
+              "failure_rate": 0.9324,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 676,
+                "back_late": 183,
+                "insufficient_visit_time": 6319,
+                "back_late_and_insufficient_visit": 2822
+              },
+              "short_visit_spot_counts": {
+                "A5": 9141
+              }
+            },
+            {
+              "day": 4,
+              "success_rate": 0.511,
+              "failure_rate": 0.489,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 5110,
+                "back_late": 616,
+                "insufficient_visit_time": 2383,
+                "back_late_and_insufficient_visit": 1891
+              },
+              "short_visit_spot_counts": {
+                "A10": 4274
+              }
+            },
+            {
+              "day": 5,
+              "success_rate": 0.0242,
+              "failure_rate": 0.9758,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 242,
+                "back_late": 7748,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 2010
+              },
+              "short_visit_spot_counts": {
+                "A7": 2010
+              }
+            }
+          ]
+        }
+      }
+    },
+    "robust": {
+      "selected": [
+        "A1",
+        "A10",
+        "A2",
+        "A3",
+        "A5",
+        "A7",
+        "A8",
+        "A9"
+      ],
+      "Z1": 62.199999999999996,
+      "Z2": 7.2,
+      "Z3": 1.2903999999999995,
+      "Z4": 2.1000000000000014,
+      "Z4_mean": 3.46,
+      "F": 0.7808273283437461,
+      "scenarios": {
+        "deterministic": {
+          "scenario": "deterministic",
+          "road_on": false,
+          "queue_on": false,
+          "N": 10000,
+          "seed": 2026,
+          "p_peak": 0.6,
+          "p_off": 0.3,
+          "R": 1.0,
+          "P_fail": 0.0,
+          "trip_fail_count": 0,
+          "dominant_failure_reason": "none",
+          "overall_failure_reason_counts": {
+            "back_late": 0,
+            "insufficient_visit_time": 0,
+            "back_late_and_insufficient_visit": 0
+          },
+          "per_day_success": [
+            {
+              "day": 1,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 2,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 3,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 4,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 5,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            }
+          ]
+        },
+        "road_only": {
+          "scenario": "road_only",
+          "road_on": true,
+          "queue_on": false,
+          "N": 10000,
+          "seed": 2026,
+          "p_peak": 0.6,
+          "p_off": 0.3,
+          "R": 0.12009999999999998,
+          "P_fail": 0.8799,
+          "trip_fail_count": 8799,
+          "dominant_failure_reason": "back_late",
+          "overall_failure_reason_counts": {
+            "back_late": 8595,
+            "insufficient_visit_time": 3219,
+            "back_late_and_insufficient_visit": 4244
+          },
+          "per_day_success": [
+            {
+              "day": 1,
+              "success_rate": 0.469,
+              "failure_rate": 0.531,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 4690,
+                "back_late": 2859,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 2451
+              },
+              "short_visit_spot_counts": {
+                "A7": 2451
+              }
+            },
+            {
+              "day": 2,
+              "success_rate": 0.9314,
+              "failure_rate": 0.0686,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 9314,
+                "back_late": 686,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 3,
+              "success_rate": 0.8161,
+              "failure_rate": 0.1839,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 8161,
+                "back_late": 598,
+                "insufficient_visit_time": 839,
+                "back_late_and_insufficient_visit": 402
+              },
+              "short_visit_spot_counts": {
+                "A10": 1241
+              }
+            },
+            {
+              "day": 4,
+              "success_rate": 0.5232,
+              "failure_rate": 0.4768,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 5232,
+                "back_late": 997,
+                "insufficient_visit_time": 2380,
+                "back_late_and_insufficient_visit": 1391
+              },
+              "short_visit_spot_counts": {
+                "A9": 3771
+              }
+            },
+            {
+              "day": 5,
+              "success_rate": 0.6545000000000001,
+              "failure_rate": 0.3455,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 6545,
+                "back_late": 3455,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            }
+          ]
+        },
+        "queue_only": {
+          "scenario": "queue_only",
+          "road_on": false,
+          "queue_on": true,
+          "N": 10000,
+          "seed": 2026,
+          "p_peak": 0.6,
+          "p_off": 0.3,
+          "R": 0.18430000000000002,
+          "P_fail": 0.8157,
+          "trip_fail_count": 8157,
+          "dominant_failure_reason": "back_late",
+          "overall_failure_reason_counts": {
+            "back_late": 7069,
+            "insufficient_visit_time": 4735,
+            "back_late_and_insufficient_visit": 509
+          },
+          "per_day_success": [
+            {
+              "day": 1,
+              "success_rate": 0.4415,
+              "failure_rate": 0.5585,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 4415,
+                "back_late": 5076,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 509
+              },
+              "short_visit_spot_counts": {
+                "A7": 509
+              }
+            },
+            {
+              "day": 2,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 3,
+              "success_rate": 1.0,
+              "failure_rate": 0.0,
+              "main_failure_reason": "none",
+              "failure_reason_counts": {
+                "none": 10000,
+                "back_late": 0,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 4,
+              "success_rate": 0.5265,
+              "failure_rate": 0.4735,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 5265,
+                "back_late": 0,
+                "insufficient_visit_time": 4735,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {
+                "A9": 4735
+              }
+            },
+            {
+              "day": 5,
+              "success_rate": 0.8007,
+              "failure_rate": 0.1993,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 8007,
+                "back_late": 1993,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            }
+          ]
+        },
+        "road_and_queue": {
+          "scenario": "road_and_queue",
+          "road_on": true,
+          "queue_on": true,
+          "N": 10000,
+          "seed": 2026,
+          "p_peak": 0.6,
+          "p_off": 0.3,
+          "R": 0.0010999999999999899,
+          "P_fail": 0.9989,
+          "trip_fail_count": 9989,
+          "dominant_failure_reason": "back_late",
+          "overall_failure_reason_counts": {
+            "back_late": 12455,
+            "insufficient_visit_time": 6951,
+            "back_late_and_insufficient_visit": 11325
+          },
+          "per_day_success": [
+            {
+              "day": 1,
+              "success_rate": 0.07050000000000001,
+              "failure_rate": 0.9295,
+              "main_failure_reason": "back_late_and_insufficient_visit",
+              "failure_reason_counts": {
+                "none": 705,
+                "back_late": 3485,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 5810
+              },
+              "short_visit_spot_counts": {
+                "A7": 5810
+              }
+            },
+            {
+              "day": 2,
+              "success_rate": 0.9107,
+              "failure_rate": 0.0893,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 9107,
+                "back_late": 893,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            },
+            {
+              "day": 3,
+              "success_rate": 0.5038,
+              "failure_rate": 0.4962,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 5038,
+                "back_late": 692,
+                "insufficient_visit_time": 2278,
+                "back_late_and_insufficient_visit": 1992
+              },
+              "short_visit_spot_counts": {
+                "A10": 4270
+              }
+            },
+            {
+              "day": 4,
+              "success_rate": 0.12680000000000002,
+              "failure_rate": 0.8732,
+              "main_failure_reason": "insufficient_visit_time",
+              "failure_reason_counts": {
+                "none": 1268,
+                "back_late": 536,
+                "insufficient_visit_time": 4673,
+                "back_late_and_insufficient_visit": 3523
+              },
+              "short_visit_spot_counts": {
+                "A9": 8196
+              }
+            },
+            {
+              "day": 5,
+              "success_rate": 0.31510000000000005,
+              "failure_rate": 0.6849,
+              "main_failure_reason": "back_late",
+              "failure_reason_counts": {
+                "none": 3151,
+                "back_late": 6849,
+                "insufficient_visit_time": 0,
+                "back_late_and_insufficient_visit": 0
+              },
+              "short_visit_spot_counts": {}
+            }
+          ]
+        }
+      }
+    }
+  }
+}

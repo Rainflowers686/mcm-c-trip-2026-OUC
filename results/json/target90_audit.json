@@ -1,0 +1,189 @@
+{
+  "audited_files": {
+    "experiment_script": "D:\\Edge Download\\mathmodel\\codex_input\\mcm_c_trip_project_v111_work\\project\\target90_experiment.py",
+    "target90_report": "D:\\Edge Download\\mathmodel\\codex_input\\mcm_c_trip_project_v111_work\\project\\output\\target90\\target90_report.json",
+    "target90_best_plan": "D:\\Edge Download\\mathmodel\\codex_input\\mcm_c_trip_project_v111_work\\project\\output\\target90\\target90_best_plan.json"
+  },
+  "checks": {
+    "p_peak_unchanged": true,
+    "p_off_unchanged": true,
+    "road_distribution_matches_solve_p3": true,
+    "road_delay_is_additive": true,
+    "return_leg_jam_included": true,
+    "queue_distribution_matches_solve_p3": true,
+    "queue_sampled_on_each_entry": true,
+    "no_extra_no_queue_probability_detected": true,
+    "trip_reliability_is_joint_five_day_success": true,
+    "failure_rule_unchanged": true,
+    "day_specific_boundaries_unchanged": true,
+    "selected_departures_legal": true,
+    "lunch_counted_for_single_spot_days": true
+  },
+  "issues": [],
+  "replay": {
+    "N": 10000,
+    "seed": 2026,
+    "R": 0.9458,
+    "P_fail": 0.0542,
+    "CI_95": 0.004437673739426998,
+    "per_day_fail": [
+      0.0086,
+      0.0006,
+      0.0009,
+      0.0004,
+      0.0442
+    ],
+    "per_day_success": [
+      0.9914,
+      0.9994,
+      0.9991,
+      0.9996,
+      0.9558
+    ],
+    "main_failure_reasons": [
+      "back_late",
+      "back_late",
+      "back_late",
+      "back_late",
+      "back_late"
+    ],
+    "failure_reason_counts": [
+      {
+        "none": 9914,
+        "back_late": 86,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9994,
+        "back_late": 6,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9991,
+        "back_late": 9,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9996,
+        "back_late": 4,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      },
+      {
+        "none": 9558,
+        "back_late": 442,
+        "insufficient_visit_time": 0,
+        "back_late_and_insufficient_visit": 0
+      }
+    ]
+  },
+  "deterministic_time_axis": [
+    {
+      "day": 1,
+      "spot": "A3",
+      "depart": 13.0,
+      "arr": 13.3,
+      "visit_st": 13.3,
+      "actual_visit": 1.0,
+      "lunch": [
+        14.3,
+        15.3
+      ],
+      "back": 15.600000000000001,
+      "back_max": 21.0,
+      "buffer": 5.399999999999999,
+      "deterministic_feasible": true
+    },
+    {
+      "day": 2,
+      "spot": "A1",
+      "depart": 9.0,
+      "arr": 9.5,
+      "visit_st": 9.5,
+      "actual_visit": 2.0,
+      "lunch": [
+        11.5,
+        12.5
+      ],
+      "back": 13.0,
+      "back_max": 21.0,
+      "buffer": 8.0,
+      "deterministic_feasible": true
+    },
+    {
+      "day": 3,
+      "spot": "A5",
+      "depart": 9.0,
+      "arr": 9.6,
+      "visit_st": 9.6,
+      "actual_visit": 2.0,
+      "lunch": [
+        11.6,
+        12.6
+      ],
+      "back": 13.2,
+      "back_max": 21.0,
+      "buffer": 7.800000000000001,
+      "deterministic_feasible": true
+    },
+    {
+      "day": 4,
+      "spot": "A10",
+      "depart": 9.0,
+      "arr": 9.5,
+      "visit_st": 9.5,
+      "actual_visit": 2.0,
+      "lunch": [
+        11.5,
+        12.5
+      ],
+      "back": 13.0,
+      "back_max": 21.0,
+      "buffer": 8.0,
+      "deterministic_feasible": true
+    },
+    {
+      "day": 5,
+      "spot": "A7",
+      "depart": 9.0,
+      "arr": 9.4,
+      "visit_st": 9.4,
+      "actual_visit": 1.5,
+      "lunch": [
+        10.9,
+        11.9
+      ],
+      "back": 12.3,
+      "back_max": 16.5,
+      "buffer": 4.199999999999999,
+      "deterministic_feasible": true
+    }
+  ],
+  "saved_report_values": {
+    "R": 0.9458,
+    "P_fail": 0.0542,
+    "CI_95": 0.004437673739426998,
+    "per_day_fail": [
+      0.0086,
+      0.0006,
+      0.0009,
+      0.0004,
+      0.0442
+    ],
+    "main_failure_reasons": [
+      "back_late",
+      "back_late",
+      "back_late",
+      "back_late",
+      "back_late"
+    ]
+  },
+  "conclusion": {
+    "can_use_as_sixth_plan": true,
+    "target90_legal_under_current_model": true,
+    "explanation": "审计显示，target90 使用 `solve_p3.py` 中的堵车与排队采样函数，堵车概率仍为 `p_peak=0.6, p_off=0.3`，道路扰动以额外延时方式加入去程与返程，排队在每次入园后按 `visit_st` 抽样。五天可靠度仍按“任一日失败则全程失败”的联合成功概率计算，失败事件仍为 `back > back_max[k]` 或 `actual_visit_time < l_min`。单景点日仍计入 1h 午餐。因此，target90 的 R=0.9458 来自合法的可靠性优先重设计，而不是修改概率、分布、失败标准或边界。"
+  }
+}
