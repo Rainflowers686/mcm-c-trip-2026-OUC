@@ -1,0 +1,5 @@
+2026-05-24 12:03:25,239 | INFO | == main.py START ==
+2026-05-24 12:03:25,384 | INFO | solve_p1 done (0.15s)
+2026-05-24 12:03:38,567 | INFO | solve_p2 done (13.18s)
+2026-05-24 12:03:51,311 | INFO | solve_p3 done (12.74s)
+2026-05-24 12:03:51,314 | INFO | Validation PASSED, total 26.08s

@@ -1,0 +1,26 @@
+2026-05-24 12:03:38,568 | INFO | == solve_p3.py START ==
+2026-05-24 12:03:38,568 | INFO | baseline_plan loaded: selected=['A1', 'A10', 'A2', 'A3', 'A5', 'A6', 'A7', 'A8'], F=0.8770
+2026-05-24 12:03:38,571 | INFO | Run MC main: N=10000  p_pk=0.60  p_off=0.30
+2026-05-24 12:03:39,701 | INFO | MC main R=0.0005  P_fail=0.9995  CI=0.0004
+2026-05-24 12:03:39,702 | INFO | Shapley phi_road=0.512 phi_queue=0.488
+2026-05-24 12:03:39,702 | INFO | Sensitivity scan: 4x4 grid, N=10000 per cell
+2026-05-24 12:03:40,206 | INFO | scan p_pk=0.4 p_off=0.1 → R=0.0058 phi_road=0.446 phi_queue=0.554
+2026-05-24 12:03:40,671 | INFO | scan p_pk=0.4 p_off=0.2 → R=0.0039 phi_road=0.447 phi_queue=0.553
+2026-05-24 12:03:41,147 | INFO | scan p_pk=0.4 p_off=0.3 → R=0.0019 phi_road=0.460 phi_queue=0.540
+2026-05-24 12:03:41,624 | INFO | scan p_pk=0.4 p_off=0.4 → R=0.0020 phi_road=0.466 phi_queue=0.534
+2026-05-24 12:03:42,093 | INFO | scan p_pk=0.5 p_off=0.1 → R=0.0013 phi_road=0.477 phi_queue=0.523
+2026-05-24 12:03:42,572 | INFO | scan p_pk=0.5 p_off=0.2 → R=0.0012 phi_road=0.488 phi_queue=0.512
+2026-05-24 12:03:43,064 | INFO | scan p_pk=0.5 p_off=0.3 → R=0.0007 phi_road=0.490 phi_queue=0.510
+2026-05-24 12:03:43,558 | INFO | scan p_pk=0.5 p_off=0.4 → R=0.0007 phi_road=0.491 phi_queue=0.509
+2026-05-24 12:03:44,034 | INFO | scan p_pk=0.6 p_off=0.1 → R=0.0009 phi_road=0.504 phi_queue=0.496
+2026-05-24 12:03:44,520 | INFO | scan p_pk=0.6 p_off=0.2 → R=0.0005 phi_road=0.504 phi_queue=0.496
+2026-05-24 12:03:45,019 | INFO | scan p_pk=0.6 p_off=0.3 → R=0.0005 phi_road=0.505 phi_queue=0.495
+2026-05-24 12:03:45,517 | INFO | scan p_pk=0.6 p_off=0.4 → R=0.0001 phi_road=0.511 phi_queue=0.489
+2026-05-24 12:03:46,011 | INFO | scan p_pk=0.7 p_off=0.1 → R=0.0001 phi_road=0.514 phi_queue=0.486
+2026-05-24 12:03:46,518 | INFO | scan p_pk=0.7 p_off=0.2 → R=0.0001 phi_road=0.514 phi_queue=0.486
+2026-05-24 12:03:47,029 | INFO | scan p_pk=0.7 p_off=0.3 → R=0.0002 phi_road=0.516 phi_queue=0.484
+2026-05-24 12:03:47,673 | INFO | scan p_pk=0.7 p_off=0.4 → R=0.0001 phi_road=0.516 phi_queue=0.484
+2026-05-24 12:03:48,773 | INFO | compare recommend: R=0.0005 P_fail=0.9995 Z4=0.600
+2026-05-24 12:03:49,868 | INFO | compare balanced: R=0.0005 P_fail=0.9995 Z4=0.600
+2026-05-24 12:03:50,985 | INFO | compare robust: R=0.0011 P_fail=0.9989 Z4=2.100
+2026-05-24 12:03:51,311 | INFO | == solve_p3.py END ==

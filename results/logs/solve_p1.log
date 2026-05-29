@@ -1,0 +1,5 @@
+2026-05-24 12:03:25,240 | INFO | == solve_p1.py START ==
+2026-05-24 12:03:25,242 | INFO | Loaded attractions (n=10) and dist matrix (11, 11)
+2026-05-24 12:03:25,384 | INFO | Top 5: ['A3', 'A7', 'A2', 'A1', 'A10']
+2026-05-24 12:03:25,384 | INFO | Combos: 18, High tier size: 4
+2026-05-24 12:03:25,384 | INFO | == solve_p1.py END ==
