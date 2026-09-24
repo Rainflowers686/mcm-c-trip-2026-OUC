@@ -1,6 +1,7 @@
 # MCM C Trip Planning 2026 OUC
 
 *A five-day May Day road-trip planning study from OUC's 2026 modeling work.*
+
 ![Python](https://img.shields.io/badge/Python-Mathematical%20Modeling-3776AB?logo=python&logoColor=white) ![Focus](https://img.shields.io/badge/Focus-Route%20Planning-2F855A) ![Status](https://img.shields.io/badge/Status-Completed%20Archive-586069)
 
 **Project link:** [Final submission release](https://github.com/Rainflowers686/mcm-c-trip-2026-OUC/releases/tag/v1.0-submission)
