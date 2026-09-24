@@ -1,12 +1,13 @@
 # 2026 OUC 数学建模 C 题：自驾游规划
 
 *中国海洋大学 2026 年数学建模项目中的五日自驾游规划研究。*
+![Python](https://img.shields.io/badge/Python-Mathematical%20Modeling-3776AB?logo=python&logoColor=white) ![Focus](https://img.shields.io/badge/Focus-Route%20Planning-2F855A) ![Status](https://img.shields.io/badge/Status-Completed%20Archive-586069)
 
-
-[English](README.md) | [简体中文](README.zh-CN.md)
+**项目入口：**[最终提交版本](https://github.com/Rainflowers686/mcm-c-trip-2026-OUC/releases/tag/v1.0-submission)
 
 **导航：**[状态](#项目状态) · [复现](#复现) · [项目结构](#项目结构)
 
+[English](README.md) | [简体中文](README.zh-CN.md)
 
 本仓库保存中国海洋大学 2026 年数学建模校赛 C 题项目，研究五一假期五日自驾游规划。
 
